@@ -1,0 +1,258 @@
+body {
+    color: rgb(47, 79, 79);
+}
+
+h2, h3 {
+    text-align: center;
+}
+
+table {
+    display: block;
+    height: 400px;
+    overflow-y: scroll;
+}
+
+header {
+    height: 100px;
+}
+
+hr {
+    color: rgb(47, 79, 79);
+}
+
+#logo {
+    color: #5BBD00
+}
+
+header, .flex-container {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+.flex-item:nth-child(1) {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 1 1 0;
+    -ms-flex: 1 1 0;
+    flex: 1 1 0;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+    margin-right: 10px;
+}
+
+.flex-item:nth-child(2) {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 2 1 auto;
+    -ms-flex: 2 1 auto;
+    flex: 2 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+}
+
+section {
+    min-height: 300px;
+}
+
+section a {
+    text-align: center;
+    margin: auto;
+}
+
+section:nth-child(1) {
+    margin-bottom: 30px;
+}
+
+/* styles for wishlist */
+
+.wishlists {
+    min-height: 400px;
+    height: 65vh;
+    overflow-y: scroll;
+}
+
+.wishlist {
+    min-height: 100px;
+    background: #F5F5F5;
+    margin: 10px 10px 10px 10px;
+    padding: 5px 20px 5px 20px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.wishlist:hover {
+    box-shadow: 1px 1px 5px #5BBD00;
+}
+
+.wishlist:hover .accept {
+    visibility: visible;
+}
+
+.wishlist.accepted {
+    opacity: 0.7;
+}
+
+.wishlist.fulfilled {
+    opacity: 0.5;
+    box-shadow: none;
+}
+
+.wishlist > div:nth-child(1) {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 4 1 0;
+    -ms-flex: 4 1 0;
+    flex: 4 1 0;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+
+    margin-right: 10px;
+    border-right: solid #EEEEEE;
+}
+
+.wishlist > div:nth-child(2) {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 1 1 0;
+    -ms-flex: 1 1 0;
+    flex: 1 1 0;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+}
+
+.wishlist div.actions {
+    padding: 10px;
+    text-align: center;
+}
+
+span.accept {
+    background: url("/static/home/icons/run.svg") 100% 0 no-repeat;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+
+    top: 50%;
+    left: 50%;
+}
+
+span.accepted {
+    background: url("/static/home/icons/man-holding-shopping-basket.svg") 100% 0 no-repeat;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+
+    top: 50%;
+    left: 50%;
+}
+
+span.fulfilled {
+    background: url("/static/home/icons/done.svg") 100% 0 no-repeat;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+
+    top: 50%;
+    left: 50%;
+}
+
+/* styles for tabs */
+input[type="radio"] { /* hide radio buttons */
+    display: none;
+}
+
+input[type="radio"] + label {
+    display: inline-block; /* show labels in line */
+    border: 1px solid #5BBD00;
+    background: #F5F5F5;
+    padding: 4px 12px;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    top: 1px;
+}
+
+input[type="radio"]:checked + label {     /* white background for selected tab */
+    background: #FFFFFF;
+    border-bottom: 1px solid transparent;
+}
+
+input[type="radio"] ~ .tab {
+    display: none; /* hide contents */
+    border-top: 1px solid #5BBD00;
+}  
+
+/* show contents only for selected tab */
+#tab1:checked ~ .tab.content1,
+#tab2:checked ~ .tab.content2,
+#tab3:checked ~ .tab.content3 {
+    display: block;
+}
+
+#my-wishlists:empty::before {
+    content: "Looks like you don't have any! Try adding a wishlist";
+    color: grey;
+}
+
+#my-trips:empty::before {
+    content: "Would you like to help a neighbor out? Pick one of the wishes nearby you!";
+    color: grey;
+}
+
+/* map and marker styles */
+
+#map {
+    min-height: 500px;
+    height: 75vh;
+}
+
+.marker {
+    background: url("/static/home/icons/marker.png") 100% 0 no-repeat;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.store {
+    background: url("/static/home/icons/shopping-cart.svg") 100% 0 no-repeat;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.mapboxgl-popup {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+  

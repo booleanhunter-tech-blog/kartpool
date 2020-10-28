@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Kartpool</title>
+
+        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+        {% load static %}
+            <link rel="stylesheet" type="text/css" href="{% static 'stores/stylesheets/index.css' %}" />
+    </head>
+    <body>
+        <h1>Stores</h1>
+        <div class="flex-container">
+            <div class="flex-item">
+                <table>
+                    <tr>
+                        <th>
+                            #
+                        </th>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Type
+                        </th>
+                        <th>
+                            Address
+                        </th>
+                        <th>
+                            Rating
+                        </th>
+                        <th>
+                            Phone
+                        </th>
+                        <th>
+                            Distance
+                        </th>
+                        <th>
+                            Location
+                        </th>
+                    </tr>
+                    {% if stores %}
+            
+                        {% for store in stores %}
+                            <tr>
+                                <td>{{ forloop.counter }}</td>
+                                <td>{{ store.name }}</td>
+                                <td>{{ store.store_type }}</td>
+                                <td>{{ store.address }}</td>
+                                <td>{{ store.rating }}</td>
+                                <td>{{ store.phone }}</td>
+                                <td>{{ store.distance }}</td>
+                                <td>{{ store.location }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% endif %}
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

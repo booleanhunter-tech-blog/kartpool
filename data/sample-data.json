@@ -1,0 +1,324 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.56.7 b85c4387",
+  "osm3s": {
+    "timestamp_osm_base": "2020-12-02T10:53:02Z",
+    "timestamp_areas_base": "2020-12-02T07:40:02Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 495932127,
+      "lat": 41.9369726,
+      "lon": -87.6646324,
+      "tags": {
+        "addr:city": "Chicago",
+        "addr:housenumber": "3033",
+        "addr:postcode": "60657",
+        "addr:state": "IL",
+        "addr:street": "North Lincoln Avenue",
+        "name": "Peerless Imported Rugs",
+        "shop": "houseware"
+      }
+    },
+    {
+      "type": "node",
+      "id": 495932130,
+      "lat": 41.9372739,
+      "lon": -87.665079,
+      "tags": {
+        "addr:housenumber": "3045",
+        "addr:street": "North Lincoln Avenue",
+        "name": "Rubin's Contemporary Furniture",
+        "shop": "furniture"
+      }
+    },
+    {
+      "type": "node",
+      "id": 495932133,
+      "lat": 41.9380405,
+      "lon": -87.6666557,
+      "tags": {
+        "addr:housenumber": "3100",
+        "addr:street": "North Lincoln Avenue",
+        "name": "Army Navy Surplus Usa",
+        "shop": "surplus"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2196927582,
+      "lat": 41.9764653,
+      "lon": -87.6926857,
+      "tags": {
+        "addr:housenumber": "5218",
+        "addr:street": "North Lincoln Avenue",
+        "addr:street:name": "Lincoln",
+        "addr:street:prefix": "North",
+        "addr:street:type": "Avenue",
+        "shop": "alcohol"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2365199606,
+      "lat": 41.9356951,
+      "lon": -87.6628628,
+      "tags": {
+        "addr:city": "Chicago",
+        "addr:housenumber": "2959",
+        "addr:postcode": "60657",
+        "addr:street": "North Lincoln Avenue",
+        "name": "Heritage General Store",
+        "opening_hours": "08:00-19:00",
+        "phone": "773-245-3005",
+        "shop": "bicycle",
+        "website": "https://www.heritagebicycles.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2366009391,
+      "lat": 41.9370564,
+      "lon": -87.665248,
+      "tags": {
+        "addr:city": "Chicago",
+        "addr:housenumber": "3044",
+        "addr:postcode": "60657",
+        "addr:street": "North Lincoln Avenue",
+        "name": "Waxman Candles",
+        "opening_hours": "Mo-Sa 11:00-19:00; Su 11:00-17:00",
+        "phone": "773-929-3000",
+        "shop": "candles",
+        "website": "https://waxmancandles.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2673354530,
+      "lat": 41.9682755,
+      "lon": -87.6884753,
+      "tags": {
+        "addr:housenumber": "4762",
+        "addr:street": "North Lincoln Avenue",
+        "name": "Fleet Feet Sports",
+        "opening_hours": "Mo-Fr 10:00-20:00; Sa 10:00-19:00; Su 11:00-18:00",
+        "shop": "sports",
+        "toilets:wheelchair": "no",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2673354537,
+      "lat": 41.9681769,
+      "lon": -87.6880736,
+      "tags": {
+        "addr:housenumber": "4757",
+        "addr:street": "North Lincoln Avenue",
+        "name": "Granville Picture Framing",
+        "phone": "773-878-4757",
+        "shop": "frame",
+        "website": "http://gpfatlsq.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2673354538,
+      "lat": 41.9681421,
+      "lon": -87.6880525,
+      "tags": {
+        "addr:housenumber": "4755",
+        "addr:street": "North Lincoln Avenue",
+        "name": "Tigerlilie",
+        "phone": "773-506-7870",
+        "shop": "salon"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2673354553,
+      "lat": 41.9679883,
+      "lon": -87.6879574,
+      "tags": {
+        "addr:housenumber": "4749",
+        "addr:street": "North Lincoln Avenue",
+        "name": "Timeless Toys",
+        "shop": "toys"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4699879259,
+      "lat": 41.9424477,
+      "lon": -87.6703796,
+      "tags": {
+        "addr:city": "Chicago",
+        "addr:housenumber": "3329",
+        "addr:postcode": "60657",
+        "addr:state": "IL",
+        "addr:street": "North Lincoln Avenue",
+        "name": "Dinkel's",
+        "phone": "+1-773-281-7300",
+        "shop": "bakery",
+        "website": "http://www.dinkels.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5056559689,
+      "lat": 41.9453506,
+      "lon": -87.6721649,
+      "tags": {
+        "addr:city": "Chicago",
+        "addr:housenumber": "3501",
+        "addr:postcode": "60657",
+        "addr:state": "IL",
+        "addr:street": "North Lincoln Avenue",
+        "description": "Fantastic butcher. Sausages, smoked meats of all types.",
+        "name": "Paulina Meat Market",
+        "opening_hours": "Th 09:00-19:00; Mo-We; Fr 09:00-18:00; Sa 09:00-17:00",
+        "phone": "+1-773-248-6272",
+        "shop": "bakery",
+        "website": "https://www.paulinamarket.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6264310729,
+      "lat": 41.9663814,
+      "lon": -87.6868937,
+      "tags": {
+        "addr:city": "Chicago",
+        "addr:housenumber": "4655",
+        "addr:postcode": "60625",
+        "addr:state": "IL",
+        "addr:street": "North Lincoln Avenue",
+        "name": "Baker Miller Bakery & Millhouse",
+        "phone": "+1-773-654-3610",
+        "shop": "bakery",
+        "website": "http://www.bakermillerchicago.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6267398385,
+      "lat": 41.9492357,
+      "lon": -87.6756385,
+      "tags": {
+        "addr:city": "Chicago",
+        "addr:housenumber": "3720",
+        "addr:postcode": "60613",
+        "addr:state": "IL",
+        "addr:street": "North Lincoln Avenue",
+        "name": "Blue Sky Bakery & Cafe",
+        "phone": "+1-773-880-9910",
+        "shop": "coffee",
+        "website": "https://www.blue-sky-bakery.org/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6269037795,
+      "lat": 41.9683893,
+      "lon": -87.6886004,
+      "tags": {
+        "addr:city": "Chicago",
+        "addr:housenumber": "4768",
+        "addr:postcode": "60625",
+        "addr:state": "IL",
+        "addr:street": "North Lincoln Avenue",
+        "name": "Bourbon Cafe",
+        "phone": "+1-773-769-3543",
+        "shop": "coffee"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6280499755,
+      "lat": 41.9711052,
+      "lon": -87.6896642,
+      "tags": {
+        "addr:city": "Chicago",
+        "addr:housenumber": "4905",
+        "addr:postcode": "60625",
+        "addr:state": "IL",
+        "addr:street": "North Lincoln Avenue",
+        "name": "Cardinal Wine & Spirit",
+        "phone": "+1-773-561-0270",
+        "shop": "alcohol",
+        "website": "http://www.cardinalwinesandspirits.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6294428374,
+      "lat": 41.9712694,
+      "lon": -87.6899479,
+      "tags": {
+        "addr:city": "Chicago",
+        "addr:housenumber": "4917",
+        "addr:postcode": "60625",
+        "addr:state": "IL",
+        "addr:street": "North Lincoln Avenue",
+        "name": "Hilary’s Cookies",
+        "phone": "+1-312-285-5055",
+        "shop": "bakery"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6298054385,
+      "lat": 41.9230625,
+      "lon": -87.6457361,
+      "tags": {
+        "addr:city": "Chicago",
+        "addr:housenumber": "2260",
+        "addr:postcode": "60614",
+        "addr:state": "IL",
+        "addr:street": "North Lincoln Avenue",
+        "name": "Insomnia Cookies",
+        "phone": "+1-877-632-6654",
+        "shop": "bakery",
+        "website": "https://insomniacookies.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6322579338,
+      "lat": 41.9802421,
+      "lon": -87.6924943,
+      "tags": {
+        "addr:city": "Chicago",
+        "addr:housenumber": "5423",
+        "addr:postcode": "60625",
+        "addr:state": "IL",
+        "addr:street": "North Lincoln Avenue",
+        "name": "Mekato’s Colombian Bakery",
+        "phone": "+1-773-784-5181",
+        "shop": "bakery",
+        "website": "http://mekatos.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7217849272,
+      "lat": 41.993707,
+      "lon": -87.7114026,
+      "tags": {
+        "addr:city": "Chicago",
+        "addr:housenumber": "6103",
+        "addr:postcode": "60659",
+        "addr:state": "IL",
+        "addr:street": "North Lincoln Avenue",
+        "brand": "Ross",
+        "brand:wikidata": "Q3442791",
+        "brand:wikipedia": "en:Ross Stores",
+        "name": "Ross",
+        "official_name": "Ross Dress for Less",
+        "shop": "department_store"
+      }
+    }
+  ]
+}
