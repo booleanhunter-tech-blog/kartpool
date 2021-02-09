@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import environ
 import django_heroku
-
+import dj_database_url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -94,13 +94,19 @@ WSGI_APPLICATION = 'kartpool.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': env('DATABASE_NAME'),
-        'USER': env('DATABASE_USER'),
-        'PASSWORD': env('DATABASE_PASSWORD'),
-        'HOST': env('DATABASE_HOST'),
-        'PORT': env('DATABASE_PORT')
     }
 }
+
+if 'DATABASE_URL' in os.environ:
+    DATABASES['default'] = dj_database_url.config()
+    DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
+else:
+    DATABASES['default']['ENGINE'] = env('DATABASE_NAME')
+    DATABASES['default']['NAME'] = env('DATABASE_NAME')
+    DATABASES['default']['USER'] = env('DATABASE_USER')
+    DATABASES['default']['PASSWORD'] = env('DATABASE_PASSWORD')
+    DATABASES['default']['HOST'] = env('DATABASE_HOST')
+    DATABASES['default']['PORT'] = env('DATABASE_PORT')
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -141,4 +147,4 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = "/static/"
 
-django_heroku.settings(locals())
+django_heroku.settings(locals(), databases=False)
