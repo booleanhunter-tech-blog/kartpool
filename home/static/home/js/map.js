@@ -1,4 +1,4 @@
-mapboxgl.accessToken = 'your-secret-key';
+mapboxgl.accessToken = 'pk.eyJ1IjoiYWhhcmloYXJhbi1lZ2VuIiwiYSI6ImNra3h4N2IzejA0MGcyc3FvaGZybXRkbnoifQ.ynlPIHPodDfv3wsLmtDT-A';
 
 
 function addMap() {
