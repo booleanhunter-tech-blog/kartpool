@@ -93,13 +93,24 @@ function displayStoreDetails(map, point) {
 
     const popup = new mapboxgl.Popup({ closeOnClick: false })
         .setLngLat(point.geometry.coordinates)
-        .setHTML(
-            `<h3>${point.properties.name}</h3>` +
-            `<h4>Approximately ${point.properties.distance.toFixed(2)} km away</h4>` +
-            `<h4>Address: ${point.properties.address || "N/A"}</h4>` +
-            `<h4>Phone: ${point.properties.phone || "N/A"}</h4>` +
-            `<h4>Rating: ${point.properties.rating || "N/A"}</h4>`
-        )
+        .setHTML(`
+            <details>
+                <summary><h2>${point.properties.name}</h2></summary>
+                <dl>
+                    <dt>Distance</dt>
+                    <dd>Approximately <strong>${point.properties.distance.toFixed(2)} km</strong> away</dd>
+
+                    <dt>Address</dt>
+                    <dd>${point.properties.address || 'N/A'}</dd>
+
+                    <dt>Phone</dt>
+                    <dd>${point.properties.phone || 'N/A'}</dd>
+
+                    <dt>Rating</dt>
+                    <dd>${point.properties.rating || 'N/A'}</dd>
+                </dl>
+            </details>
+        `)
         .addTo(map);
     return popup;
 }

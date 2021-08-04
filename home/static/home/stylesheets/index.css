@@ -1,30 +1,54 @@
+/* null margins and padding to give good cross-browser baseline */
+html, body, address, blockquote, div,
+form, fieldset, caption,
+h1, h2, h3, h4, h5, h6,
+hr, ul, li, ol, ul,
+table, tr, td, th, p, img {
+	margin: 0;
+	padding: 0;
+}
+
+img, fieldset {
+	border: none;
+}
+
+/* global CSS variables */
+:root {
+    --primary-color: rgb(47, 79, 79);
+    --accent-color: #5BBD00;
+}
+
 body {
-    color: rgb(47, 79, 79);
+    color: var(--primary-color);
 }
 
-h2, h3 {
+h1, h2 {
     text-align: center;
-}
-
-table {
-    display: block;
-    height: 400px;
-    overflow-y: scroll;
+    padding: 0.5em;
 }
 
 header {
-    height: 100px;
+    height: 6.25em;
 }
 
 hr {
-    color: rgb(47, 79, 79);
+    color: var(--primary-color);
+}
+
+dt {
+    font-weight: bold;
+}
+
+main {
+    max-width: 98vw;
+    margin: auto;
 }
 
 #logo {
-    color: #5BBD00
+    color: var(--accent-color)
 }
 
-header, .flex-container {
+.flex-container {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -55,7 +79,7 @@ header, .flex-container {
     -webkit-align-self: auto;
     -ms-flex-item-align: auto;
     align-self: auto;
-    margin-right: 10px;
+    margin-right: 0.62em;
 }
 
 .flex-item:nth-child(2) {
@@ -70,32 +94,39 @@ header, .flex-container {
     align-self: auto;
 }
 
-section {
-    min-height: 300px;
+main > section {
+    min-height: 18.75em;
 }
 
-section a {
-    text-align: center;
-    margin: auto;
+main > section > h1 {
+    text-transform: uppercase;
 }
 
 section:nth-child(1) {
-    margin-bottom: 30px;
+    margin-bottom: 1em;
+}
+
+section[aria-label="Create a wishlist"] {
+    margin-top: 1em;
 }
 
 /* styles for wishlist */
 
 .wishlists {
-    min-height: 400px;
+    min-height: 25em;
     height: 65vh;
     overflow-y: scroll;
 }
 
+.wishlists > li {
+    list-style-type: none;
+}
+
 .wishlist {
-    min-height: 100px;
+    min-height: 6.25em;
     background: #F5F5F5;
-    margin: 10px 10px 10px 10px;
-    padding: 5px 20px 5px 20px;
+    margin:  0.6em 0.6em 0.6em 0.6em;
+    padding: 0.3em 1.25em 0.3em 1.25em;
 
     display: flex;
     justify-content: flex-start;
@@ -106,11 +137,21 @@ section:nth-child(1) {
 }
 
 .wishlist:hover {
-    box-shadow: 1px 1px 5px #5BBD00;
+    box-shadow: 1px 1px 5px var(--accent-color);
 }
 
-.wishlist:hover .accept {
-    visibility: visible;
+.wishlist h1 {
+    padding: 0.5em;
+    font-size: 1.2em;
+}
+
+.wishlist ul {
+    padding: 0.5em;
+    padding-inline: 1.5em;
+}
+
+.wishlist > section.actions > button {
+    color: transparent;
 }
 
 .wishlist.accepted {
@@ -122,7 +163,11 @@ section:nth-child(1) {
     box-shadow: none;
 }
 
-.wishlist > div:nth-child(1) {
+.wishlist h1 {
+    text-align: left;
+}
+
+.wishlist > section:nth-child(1) {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -133,11 +178,13 @@ section:nth-child(1) {
     -ms-flex-item-align: auto;
     align-self: auto;
 
-    margin-right: 10px;
+    margin-right: 0.62em;
     border-right: solid #EEEEEE;
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
 }
 
-.wishlist > div:nth-child(2) {
+.wishlist > section:nth-child(2) {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -149,74 +196,88 @@ section:nth-child(1) {
     align-self: auto;
 }
 
-.wishlist div.actions {
-    padding: 10px;
+.wishlist > section.actions {
+    padding: 0.62em;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-span.accept {
+.wishlist > section.actions > button {
+    width: 2.3em;
+    height: 2.3em;
+    border: none;
+}
+
+button.accept {
     background: url("/static/home/icons/run.svg") 100% 0 no-repeat;
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
-
-    top: 50%;
-    left: 50%;
 }
 
-span.accepted {
+button.accepted {
     background: url("/static/home/icons/man-holding-shopping-basket.svg") 100% 0 no-repeat;
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
-
-    top: 50%;
-    left: 50%;
 }
 
-span.fulfilled {
+button.fulfilled {
     background: url("/static/home/icons/done.svg") 100% 0 no-repeat;
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-
-    top: 50%;
-    left: 50%;
 }
 
 /* styles for tabs */
-input[type="radio"] { /* hide radio buttons */
-    display: none;
+
+.tabset > input {
+    display: block; /* "enable" hidden elements in IE/edge */
+    position: absolute; /* then hide them off-screen */
+    left: -100%;
 }
 
-input[type="radio"] + label {
+.tabset > ul {
+    position: relative;
+    z-index: 999;
+    list-style: none;
+    display: flex;
+    margin-bottom: -1px;
+    text-transform: uppercase;
+}
+
+.tabset > ul > li {
     display: inline-block; /* show labels in line */
-    border: 1px solid #5BBD00;
+
+    border: 1px solid var(--accent-color);
     background: #F5F5F5;
-    padding: 4px 12px;
-    border-radius: 4px 4px 0 0;
+    padding: 0.25em 0.75em;
+    border-radius: 0.25em 0.25em 0 0;
     position: relative;
     top: 1px;
 }
 
-input[type="radio"]:checked + label {     /* white background for selected tab */
+.tabset > input:nth-child(1):checked ~ ul li:nth-child(1),
+.tabset > input:nth-child(2):checked ~ ul li:nth-child(2),
+.tabset > input:nth-child(3):checked ~ ul li:nth-child(3) {     /* white background for selected tab */
     background: #FFFFFF;
     border-bottom: 1px solid transparent;
 }
 
-input[type="radio"] ~ .tab {
-    display: none; /* hide contents */
-    border-top: 1px solid #5BBD00;
-}  
-
-/* show contents only for selected tab */
-#tab1:checked ~ .tab.content1,
-#tab2:checked ~ .tab.content2,
-#tab3:checked ~ .tab.content3 {
-    display: block;
+.tabset > input:nth-child(1):focus ~ ul li:nth-child(1),
+.tabset > input:nth-child(2):focus ~ ul li:nth-child(2),
+.tabset > input:nth-child(3):focus ~ ul li:nth-child(3) {     /* white background for selected tab */
+    background: #FFFFFF;
+    border-bottom: 1px solid transparent;
 }
+
+.tabset > div > section {
+    position: absolute;
+    top: -999em;
+    left: -999em;
+    border-top: 1px solid var(--accent-color);
+}
+
+.tabset > input:nth-child(1):checked ~ div > section:nth-child(1),
+.tabset > input:nth-child(2):checked ~ div > section:nth-child(2),
+.tabset > input:nth-child(3):checked ~ div > section:nth-child(3) {
+    position: static;
+}
+
+/* End of Tab styles */
 
 #my-wishlists:empty::before {
     content: "Looks like you don't have any! Try adding a wishlist";
@@ -228,31 +289,46 @@ input[type="radio"] ~ .tab {
     color: grey;
 }
 
+button#add-wishlist {
+    height: 2em;
+    color: var(--primary-color);
+    border-color: var(--accent-color);
+    border-radius: 0.3em;
+    text-transform: uppercase;
+}
+
+input#wishlist-items {
+    height: 1.5em;
+}
+
 /* map and marker styles */
 
 #map {
-    min-height: 500px;
+    min-height: 31.25em;
     height: 75vh;
 }
 
 .marker {
     background: url("/static/home/icons/marker.png") 100% 0 no-repeat;
     display: inline-block;
-    width: 32px;
-    height: 32px;
+    width: 2em;
+    height: 2em;
     cursor: pointer;
 }
 
 .store {
     background: url("/static/home/icons/shopping-cart.svg") 100% 0 no-repeat;
     display: inline-block;
-    width: 32px;
-    height: 32px;
+    width: 2em;
+    height: 2em;
     cursor: pointer;
 }
 
 .mapboxgl-popup {
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
-  
+
+details > summary > h2 {
+    display: inline-block;
+}

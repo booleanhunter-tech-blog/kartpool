@@ -30,51 +30,55 @@ function createWishlistNode(
     store,
     wishmaster,
 ) {
-    const wishlist = document.createElement("div");
+    const wishlist = document.createElement("li");
     wishlist.className = "wishlist";
     wishlist.title = `Created at ${new Date(createdAt)}`;
     wishlist.setAttribute("data-id", id);
     wishlist.setAttribute("data-store-id", store);
 
-    const wishlistContent = document.createElement("div");
-    wishlistContent.className = "content";
+    const wishlistContent = document.createElement("section");
 
-    const createdBy = document.createElement("h4");
-    createdBy.innerHTML = buyer;
-    createdBy.title = `Created at ${new Date(createdAt)}`;
+    const createdBy = document.createElement("h1");
+    createdBy.textContent = buyer;
     wishlistContent.appendChild(createdBy);
 
     const wishlistItems = document.createElement("ul");
+    wishlistItems.setAttribute("aria-label", "Wishlist items")
     
     for (let idx=0; idx<items.length; idx++) {
         let item = document.createElement("li");
-        item.innerHTML = items[idx];
+        item.textContent = items[idx];
         wishlistItems.appendChild(item);
     }
     wishlistContent.appendChild(wishlistItems);
 
-    const actions = document.createElement("div");
+    const actions = document.createElement("section");
     actions.className = "actions";
+    actions.setAttribute("aria-label", "Change status")
 
-    const action = document.createElement("span");
-    action.setAttribute("data-id", id);
+    const actionButton = document.createElement("button");
+    actionButton.setAttribute("data-id", id);
+    
     switch(status) {
         case "PENDING":
-            action.className = "accept";
-            action.title = "Make a trip";
+            actionButton.className = "accept";
+            actionButton.textContent = "Make a trip";
+            actionButton.title = "Make a trip";
             break;
         case "ACCEPTED":
-            action.className = "accepted";
-            action.title = `Wishlist picked up by ${wishmaster}`;
+            actionButton.className = "accepted";
+            actionButton.textContent = `Wishlist picked up by ${wishmaster}`;
+            actionButton.title = `Wishlist picked up by ${wishmaster}`;
             wishlist.className += " accepted";
             break;
         default:
-            action.className = "fulfilled";
-            action.title = `Wishlist fulfilled by ${wishmaster}`;
+            actionButton.className = "fulfilled";
+            actionButton.textContent = `Wishlist fulfilled by ${wishmaster}`;
+            actionButton.title = `Wishlist fulfilled by ${wishmaster}`;
             wishlist.className += " fulfilled";
             break;
     }
-    actions.appendChild(action);
+    actions.appendChild(actionButton);
 
     wishlist.appendChild(wishlistContent);
     wishlist.appendChild(actions);
@@ -85,9 +89,11 @@ function createWishlistNode(
 function updateWishlistNode(element, status) {
     if (status === "ACCEPTED") {
         element.className = "accepted";
+        element.textContent = `Wishlist picked up by ${USERNAME}`;
         element.title = `Wishlist picked up by ${USERNAME}`;
     } else if (status === "FULFILLED") {
         element.className = "fulfilled";
+        element.textContent = `Wishlist fulfilled by ${USERNAME}`;
         element.title = `Wishlist fulfilled by ${USERNAME}`;
     }
 }
