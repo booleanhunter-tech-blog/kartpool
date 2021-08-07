@@ -29,22 +29,26 @@
  * @param {number} longitude
  * @return {Promise<Store[]>} Array of stores
  */
-async function fetchNearbyStores(latitude, longitude) {
+export async function fetchNearbyStores(latitude, longitude) {
     const response = await fetch(`/stores?lat=${latitude}&lng=${longitude}`, {
-        method: "GET"
+        method: 'GET'
     });
 
-    return response.json();
+    if (response.ok) {
+        return response.json();
+    } else {
+        return Promise.reject(Error(response.statusText));
+    }
 }
 
 /**
  * Fetch list of nearby wishlists
  * @param {number} latitude
  * @param {number} longitude
- * @param {Wishlist} [options]
+ * @param {{buyer: Wishlist['buyer'], wishmaster: Wishlist['wishmaster']}} [options]
  * @return {Promise<Wishlist[]>} Array of wishlists
  */
-async function fetchNearbyWishlists(
+export async function fetchNearbyWishlists(
     latitude,
     longitude,
     options,
@@ -61,22 +65,27 @@ async function fetchNearbyWishlists(
     }
     
     const response = await fetch(url, {
-        method: "GET"
+        method: 'GET'
     });
 
-    return response.json();
+    if (response.ok) {
+        return response.json();
+    } else {
+        return Promise.reject(Error(response.statusText));
+    }
+
 }
 
 /**
  * Add a wishlist
- * @param {string} buyer
- * @param {string[]} items
- * @param {string} ID of the store
+ * @param {Wishlist['buyer']} buyer
+ * @param {Wishlist['items']} items
+ * @param {string} store ID of the store
  * @return {Promise<Wishlist>}
  */
-async function addWishlist(buyer, items, store) {
-    const response = await fetch("/wishlists/", {
-        method: "POST",
+export async function addWishlist(buyer, items, store) {
+    const response = await fetch('/wishlists/', {
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
@@ -87,7 +96,11 @@ async function addWishlist(buyer, items, store) {
         })
     });
 
-    return response.json();
+    if (response.ok) {
+        return response.json();
+    } else {
+        return Promise.reject(Error(response.statusText));
+    }
 }
 
 /**
@@ -96,14 +109,18 @@ async function addWishlist(buyer, items, store) {
  * @param {Wishlist} data - Wishlist fields to update
  * @return {Promise<Wishlist>}
  */
-async function updateWishlist(id, data) {
+export async function updateWishlist(id, data) {
     const response = await fetch(`/wishlists/${id}/`, {
-        method: "PATCH",
+        method: 'PATCH',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data),
     });
 
-    return response.json();
+    if (response.ok) {
+        return response.json();
+    } else {
+        return Promise.reject(Error(response.statusText));
+    }
 }
